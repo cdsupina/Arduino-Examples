@@ -15,21 +15,26 @@ void loop() {
     Serial.read();
   }
   
-  while(Serial.available() == 0); //Nothing is done if there is no data being sent through the Serial communication
+  //Nothing is done if there is no data being sent through the Serial communication
+  while(Serial.available() == 0); 
   
-  while(Serial.available() > 0){ //If there is data, excute this loop
+  //If there is data, excute this loop
+  while(Serial.available() > 0){ 
   
-    byte incoming = Serial.read(); //stores the next byte in the byte variable: incoming
+    //stores the next byte in the byte variable: incoming
+    byte incoming = Serial.read(); 
     
     if(incoming >= '0' && incoming <= '9'){
     
-      number = (number * 10) + (incoming - '0');  //magic
+      //magic
+      number = (number * 10) + (incoming - '0');  
       
       delay(5);
     }
     
    
   }
+  
   
   Serial.print("number = ");
   Serial.println(number);
