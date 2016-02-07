@@ -1,3 +1,14 @@
+/*************************************************** 
+  This sketch uses 2 leds and 2 digital input buttons
+  
+  Written by Carlo Supina
+ ****************************************************/
+
+// Connect a lead on both buttons to ground with a 220 ohm resistor and to it's appropriate digital IO pin (6 and 7).
+// Connect the other lead on both buttons to Vcc
+// Connect anode on both LED's to it's appropriate digital IO pin (8 and 10).
+// Connect cathode on both LED's to ground with a 100 ohm resistor.
+
 int led_1 = 8;
 int led_2 = 10;
 
@@ -5,7 +16,7 @@ int toggle_1 = 6;
 int toggle_2 = 7;
 
 void setup() {
-  // put your setup code here, to run once:
+  
   pinMode(led_1, OUTPUT);
   pinMode(led_2, OUTPUT);
 
@@ -14,7 +25,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  
   if(digitalRead(toggle_1) && digitalRead(toggle_2)){
 
     digitalWrite(led_1, HIGH);
